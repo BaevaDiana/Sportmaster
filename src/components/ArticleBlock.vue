@@ -15,7 +15,6 @@ export default {
     name: 'ArticleBlock',
     props: {
         title: String,
-        
         body: String,
         publish: Boolean,
         author:String
