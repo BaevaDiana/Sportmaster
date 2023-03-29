@@ -1,0 +1,13 @@
+.red_publish
+{
+    background-color: brown;
+
+    font-style: italic;
+
+}
+
+.div_form{
+    display: flex;
+    width: 33%;
+
+}

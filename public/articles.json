@@ -1,0 +1,11 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "All About Vue",
+      "body": "All information about frameworks and theur author",
+      "author": "Baeva Diana",
+      "publish": "true"
+    }
+  ]
+}
