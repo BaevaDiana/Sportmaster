@@ -23,22 +23,21 @@
             <v-list-item-title>About</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-    
-        <v-divider></v-divider>
-    
-    
-    
-        <!-- <v-list-item v-for="(item, i) in items" :key="i" link :to="item.route">
+
+
+        <v-list-item link to="/new">
           <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon>mdi-plus</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title>Add new article</v-list-item-title>
           </v-list-item-content>
-        </v-list-item> -->
+        </v-list-item>
+    
+        <v-divider></v-divider>
+  
       </v-list>
     </v-navigation-drawer>
-
 
     <v-app-bar app color="primary" dark>
       <v-btn icon @click="drawer = !drawer">
@@ -82,7 +81,7 @@
         </v-card-actions>
       </v-card> -->
       <router-view/>
-
+  
     </v-main>
 
     <v-footer color="primary" dark>
@@ -103,6 +102,14 @@
             </v-btn>
             </router-link>
           </v-col>
+
+          <v-col>
+            <router-link to="/new">
+              <v-btn icon>
+                <v-icon>mdi-plus</v-icon>
+              </v-btn>
+              </router-link>
+            </v-col>
         </v-row>
     </v-footer>
 
@@ -110,17 +117,17 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
       drawer: false,
       items: [
         { title: 'Articles', icon: 'mdi-newspaper', route: { name: 'Home' } },
-        { title: 'About', icon: 'mdi-information', route: { name: 'About' } },
+        { title: 'About', icon: 'mdi-information', route: { name: 'About' } }
       ],
     };
-  },
-  name:"MyFooter",
+  }
 };
 </script>
 

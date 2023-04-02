@@ -12,7 +12,6 @@ export default{
   components: {
       ArticleForm
   },
-
   //data() {
       
       //return {
@@ -46,7 +45,7 @@ export default{
           .catch(error => {
             console.log(error);
           });
-        this.$router.push('/articles');
+        //this.$router.push('/articles');
             }
   },
   //beforeMount:function(){
