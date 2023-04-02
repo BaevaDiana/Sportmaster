@@ -1,32 +1,75 @@
 <template>
   <v-app>
 
- <v-navigation-drawer app> 
+    <v-navigation-drawer v-model="drawer" app>
 
-      <v-divider></v-divider>
+      <v-subheader class="text-uppercase font-weight-bold">Меню</v-subheader>
+    
       <v-list>
-        <v-subheader class="text-uppercase font-weight-bold">Меню</v-subheader>
-
-        <v-list-item v-for="(item, i) in items" :key="i" link>
+        <v-list-item link to="/">
+          <v-list-item-icon>
+            <v-icon>mdi-newspaper</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Article</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+    
+        <v-list-item link to="/about">
+          <v-list-item-icon>
+            <v-icon>mdi-information</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>About</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+    
+        <v-divider></v-divider>
+    
+    
+    
+        <!-- <v-list-item v-for="(item, i) in items" :key="i" link :to="item.route">
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
-        </v-list-item>
+        </v-list-item> -->
       </v-list>
-
     </v-navigation-drawer>
 
 
     <v-app-bar app color="primary" dark>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-btn icon @click="drawer = !drawer">
+        <v-icon>mdi-menu</v-icon>
+      </v-btn>
       <v-toolbar-title>List of articles about Vue.js</v-toolbar-title>
     </v-app-bar>
 
     <v-main>
-      <v-card>
+      <!-- <v-container>
+        <v-carousel>
+          <v-carousel-item v-for="(article, index) in articles" :key="index">
+            <v-card>
+              <v-img
+                src="https://blog.skillfactory.ru/wp-content/uploads/2023/02/logo-vuejs-9686556.png">
+                height: "100px" 
+                width: "100px"
+              </v-img> 
+              <v-card-title>{{ article.title }}</v-card-title>
+              <v-card-subtitle>{{ article.author }}</v-card-subtitle>
+              <v-card-actions>
+                <v-btn @click="article.published = !article.published">
+                  {{ article.published ? "Unpublished" : "" }}
+                </v-btn>
+                <v-btn @click="showDialog(index)">Редактировать</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-carousel-item>
+        </v-carousel>
+      </v-container>   -->
+      <!-- <v-card>
         <v-card-title>Заголовок</v-card-title>
     
         <v-card-text>
@@ -37,28 +80,30 @@
           <v-btn color="primary">Действие 1</v-btn>
           <v-btn color="secondary">Действие 2</v-btn>
         </v-card-actions>
-      </v-card>
+      </v-card> -->
       <router-view/>
 
-      <v-container>
-        <h1>Main Content</h1>
-      </v-container>
     </v-main>
 
     <v-footer color="primary" dark>
       <v-spacer></v-spacer>
       <v-row align="center">
         <v-col>
-          <v-btn icon>
-          <v-icon>mdi-newspaper</v-icon>
-      </v-btn>
+          <router-link to="/">
+            <v-btn icon>
+              <v-icon>mdi-newspaper</v-icon>
+            </v-btn>
+          </router-link>
         </v-col>
+
         <v-col>
-          <v-btn icon>
-            <v-icon>mdi-information</v-icon>
-          </v-btn>
-        </v-col>
-      </v-row>
+          <router-link to="/about">
+            <v-btn icon>
+              <v-icon>mdi-information</v-icon>
+            </v-btn>
+            </router-link>
+          </v-col>
+        </v-row>
     </v-footer>
 
   </v-app>
@@ -70,8 +115,8 @@ export default {
     return {
       drawer: false,
       items: [
-        { title: 'Articles', icon: 'mdi-newspaper' },
-        { title: 'About', icon: 'mdi-information' },
+        { title: 'Articles', icon: 'mdi-newspaper', route: { name: 'Home' } },
+        { title: 'About', icon: 'mdi-information', route: { name: 'About' } },
       ],
     };
   },
