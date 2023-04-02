@@ -45,10 +45,22 @@
       </v-container>
     </v-main>
 
-    <v-footer app>
-      <span>&copy; 2023</span>
+    <v-footer color="primary" dark>
+      <v-spacer></v-spacer>
+      <v-row align="center">
+        <v-col>
+          <v-btn icon>
+          <v-icon>mdi-newspaper</v-icon>
+      </v-btn>
+        </v-col>
+        <v-col>
+          <v-btn icon>
+            <v-icon>mdi-information</v-icon>
+          </v-btn>
+        </v-col>
+      </v-row>
     </v-footer>
-    
+
   </v-app>
 </template>
 
@@ -63,6 +75,7 @@ export default {
       ],
     };
   },
+  name:"MyFooter",
 };
 </script>
 
