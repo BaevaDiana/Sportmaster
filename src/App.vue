@@ -1,61 +1,73 @@
 <template>
-  <div id="app">
-    <ArticleList msg="List of articles" />
-    <div id="nav">
-      <router-link to="/"> Articles </router-link><br>
-      <router-link to="/about"> About</router-link><br>
-      <router-link to="/new"> Add new Article</router-link><br>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+
+ <v-navigation-drawer app> 
+
+      <v-divider></v-divider>
+      <v-list>
+        <v-subheader class="text-uppercase font-weight-bold">Меню</v-subheader>
+
+        <v-list-item v-for="(item, i) in items" :key="i" link>
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+
+    </v-navigation-drawer>
+
+
+    <v-app-bar app color="primary" dark>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title>List of articles about Vue.js</v-toolbar-title>
+    </v-app-bar>
+
+    <v-main>
+      <v-card>
+        <v-card-title>Заголовок</v-card-title>
+    
+        <v-card-text>
+          Текст карточки
+        </v-card-text>
+    
+        <v-card-actions>
+          <v-btn color="primary">Действие 1</v-btn>
+          <v-btn color="secondary">Действие 2</v-btn>
+        </v-card-actions>
+      </v-card>
+      <router-view/>
+
+      <v-container>
+        <h1>Main Content</h1>
+      </v-container>
+    </v-main>
+
+    <v-footer app>
+      <span>&copy; 2023</span>
+    </v-footer>
+    
+  </v-app>
 </template>
 
 <script>
-// import Vue from 'vue'
-// import VueAxios from 'vue-axios'
-// import axios from 'axios'
-// Vue.axios.get('http://localhost:10000/articles').then((response) => {
-//   console.log(response.data)
-// })
-
-// this.axios.get('http://localhost:10000/articles').then((response) => {
-//   console.log(response.data)
-// })
-
-// this.$http.get('http://localhost:10000/articles').then((response) => {
-//   console.log(response.data)
-// })
-
-
 export default {
-  name: 'App',
-  // components: {
-  //     //ArticleList
-  // }
-}
+  data() {
+    return {
+      drawer: false,
+      items: [
+        { title: 'Articles', icon: 'mdi-newspaper' },
+        { title: 'About', icon: 'mdi-information' },
+      ],
+    };
+  },
+};
 </script>
 
-<style>
- @import './style.css';
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.v-subheader {
+  font-size: 16px;
 }
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-
 </style>
