@@ -3,14 +3,14 @@
     {
       "id": 1,
       "title": "All About Vue",
-      "body": "All information about frameworks and theur author",
+      "body": "All information about frameworks and their authors",
       "author": "Baeva Diana",
       "publish": "true"
     },
     {
       "id": 2,
       "title": "All About JS",
-      "body": "All information about frameworks and theur author",
+      "body": "All information about frameworks and their authors",
       "author": "Baeva Diana",
       "publish": "true"
     },

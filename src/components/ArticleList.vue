@@ -19,6 +19,7 @@
         v-on:add-article="addArticle" />
     </div>
   </template> -->
+
   <template>
     <div class="hello">
       <div v-if="loading" >
@@ -52,7 +53,7 @@
       <!-- <ArticleForm title="New title" body="" author="" publish=""
         v-on:add-article="addArticle" /> -->
     </div>
-  </template>
+</template>
 
   
 <script>
@@ -91,8 +92,7 @@ methods:{
             })
             .finally(() => {
                 this.loading = false;
-            });
-        
+            }); 
     },
     cancelRequest() {
         if (this.loading && this.cancelTokenSource) {
@@ -106,7 +106,6 @@ beforeMount()  {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3{
   margin:40px 0 0;

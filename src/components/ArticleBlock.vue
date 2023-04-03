@@ -8,6 +8,7 @@
         <button v-on:click.prevent="$emit('state')">Published</button>
     </div>
 </template> -->
+
 <template>
     <v-card class="card" elevation="12" color="grey lighten-4" width="1000">
       <v-img src="../assets/article.png" height="300" width="400"></v-img>
@@ -21,9 +22,7 @@
 </template>
 
 
-
 <script>
-
 export default {
     name: 'ArticleBlock',
     props: {
@@ -49,7 +48,6 @@ export default {
         publish(newVal,oldVal){
             console.log(`${newVal} ${oldVal}`)
         }
-
     }
 };
 </script>
@@ -78,7 +76,6 @@ h3 {
     color:white;
     border-radius: 15px;
   }
-
 </style>
 
 

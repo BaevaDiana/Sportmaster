@@ -10,6 +10,7 @@
         </form>
     </div>
 </template> -->
+
 <template>
     <v-form>
         <v-container>
@@ -50,7 +51,6 @@
 </template>
 
 <script>
-
 export default {
     name: 'ArticleForm',
     props: {

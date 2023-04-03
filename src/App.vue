@@ -77,7 +77,6 @@
             </v-col>
         </v-row>
     </v-footer>
-
   </v-app>
 </template>
 
