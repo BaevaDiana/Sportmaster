@@ -9,7 +9,7 @@
     </div>
 </template> -->
 <template>
-    <v-card class="card" elevation="12" color="grey lighten-4">
+    <v-card class="card" elevation="12" color="grey lighten-4" width="1000">
       <v-img src="../assets/article.png" height="300" width="400"></v-img>
       <v-card-title>{{ title }}</v-card-title>
       <v-card-text class="text1">{{ body }}</v-card-text>
@@ -30,11 +30,19 @@ export default {
         title: String,
         body: String,
         publish: Boolean,
-        author:String
+        author:String,
+        id: {
+             type:Number,
+             required: true
+            },
     },
     computed:{
         upperAuthor(){
             return this.author.toUpperCase();
+        },
+        article() {
+            console.log(`${this.$store.state.articles}`)
+        return this.$store.state.articles.find(article => article.id === Number(this.id))
         }
     },
     watch:{

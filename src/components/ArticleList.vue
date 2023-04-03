@@ -21,7 +21,15 @@
   </template> -->
   <template>
     <div class="hello">
-      <div v-if="loading" class="loader"></div>
+      <div v-if="loading" >
+        <v-progress-circular
+        color="primary"
+        indeterminate
+        :size="100"
+        :width="15"
+        ></v-progress-circular>
+
+      </div>
       <ul v-if="!loading">
         <div v-if="articles.length">
           <ArticleBlock

@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 // import Home from '../views/my_home.vue'
 import NewArticle from '../views/my_new_article.vue'
 import ArticleList from '../components/ArticleList.vue'
+import ArticleBlock from "../components/ArticleBlock.vue"
 // import store from '../store
 // import {createRouter,createWebHistory} from "vue-router";
 
@@ -20,11 +21,11 @@ const routes = [
 
         component: () => import('../views/my_about.vue')
     },
-    // {
-    //   path: '/article/:id',
-    //    component: ArticleBlock,
-    //    props: (route) => store.state.articles.find((x) => x.id == route.params.id)
-    // },
+    {
+      path: '/article/:id',
+       component: ArticleBlock,
+       props: (route) => ({ id: Number(route.params.id) })
+    },
     {
          path:'/new',
          name:'Add new article',
