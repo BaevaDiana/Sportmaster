@@ -89,7 +89,8 @@ export default {
       drawer: false,
       items: [
         { title: 'Articles', icon: 'mdi-newspaper'},
-        { title: 'About', icon: 'mdi-information', route: { name: 'About' } }
+        { title: 'About', icon: 'mdi-information', route: { name: 'About' } },
+        { title: 'Add new article', icon: 'mdi-plus', route: { name: 'NewArticle' } }
       ],
     };
   }

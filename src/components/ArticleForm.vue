@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div>
         <h2>Add new article</h2>
         <form>
@@ -9,6 +9,44 @@
             <div class="green"><input type="submit" value="Add" v-on:click.prevent="$emit('add-article',article)" /></div>
         </form>
     </div>
+</template> -->
+<template>
+    <v-form>
+        <v-container>
+            <v-text-field
+            v-model="article.title"
+            :counter="50"
+            required
+          ></v-text-field>
+
+          <v-text-field
+            v-model="article.author"
+            label="Author"
+            required
+          ></v-text-field>
+
+          <v-textarea
+            v-model="article.body"
+            auto-grow
+            variant="filled"
+            label="Body"
+            rows="2"
+            required
+          ></v-textarea>
+
+          <v-checkbox
+            v-model="article.publish"
+            label="Published"
+            type="checkbox"
+            ></v-checkbox>
+          <v-btn class="button"
+            type="submit"
+            v-on:click.prevent="$emit('add-article',article)"
+            >
+            ADD
+            </v-btn>
+        </v-container>
+    </v-form>
 </template>
 
 <script>
@@ -39,43 +77,8 @@ h2{
     padding-top:20px;
     padding-left:20px;
 }
-input[type="text"] {
-    padding-top:30px;
-    padding-left: 20px;
-    border-bottom: 1px solid rgb(0, 0, 0);
-    border-radius: 4px;
-}
-textarea {
-    padding-top:40px;
-    padding-left: 10px;
-    border-bottom: 2px solid rgb(0, 0, 0);
-    border-radius: 4px;
-}
-label{
-    padding-top:200px;
-    padding-left: 10px;
-}
-input [type="submit"] {
-    background-color: blue;
-    color: white;
-    padding-top:30px;
-    padding-left: 10px;
-    border-bottom: 2px solid rgb(0, 0, 0);
-    border-radius: 4px;
-}
-.green{
-    margin-top:30px;
-    margin-left:15px;
+.button{
     background-color: chartreuse;
-    width: 80px;
-    height: 35px;
-    text-align: center;
-    color:white;
-    border-radius: 4px;
-
 }
-
-
-
 </style>
 

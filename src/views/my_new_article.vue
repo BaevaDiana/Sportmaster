@@ -45,7 +45,7 @@ export default{
           .catch(error => {
             console.log(error);
           });
-        //this.$router.push('/articles');
+        this.$router.push('/');
             }
   },
   //beforeMount:function(){
@@ -54,7 +54,7 @@ export default{
           //.then(articles =>this.articles=articles);
       //console.log('Fetch data');
   //}
-}
+};
 </script>
 
 <style scoped>
