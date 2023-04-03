@@ -35,7 +35,6 @@ export default{
             published: newArticle.publish
       };
             // Отправляем запрос POST на сервер с помощью Axios
-        
             axios.post('http://localhost:10000/articles', data)
           .then(response => {
             console.log(response);

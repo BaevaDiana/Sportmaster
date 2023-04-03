@@ -31,7 +31,6 @@ export default{
   components: {
       ArticleBlock//,ArticleForm
   },
-
   data() {
       return {
           articles: store.state.articles
