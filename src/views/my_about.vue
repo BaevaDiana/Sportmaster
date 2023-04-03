@@ -1,5 +1,5 @@
 <template>
-  <h1>List of Articles about of Vue.js</h1>
+  <h1>List of articles about Vue.js</h1>
 </template>
 
 <script>

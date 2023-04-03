@@ -6,6 +6,20 @@
       "body": "All information about frameworks and theur author",
       "author": "Baeva Diana",
       "publish": "true"
+    },
+    {
+      "id": 2,
+      "title": "All About JS",
+      "body": "All information about frameworks and theur author",
+      "author": "Baeva Diana",
+      "publish": "true"
+    },
+    {
+      "id": 3,
+      "title": "Web-Programming",
+      "body": "Guide how to start in web-programming for beginners",
+      "author": "Baeva Diana",
+      "publish": "false"
     }
   ]
 }

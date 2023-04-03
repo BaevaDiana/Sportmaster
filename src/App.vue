@@ -35,7 +35,6 @@
         </v-list-item>
     
         <v-divider></v-divider>
-  
       </v-list>
     </v-navigation-drawer>
 
@@ -47,41 +46,7 @@
     </v-app-bar>
 
     <v-main>
-      <!-- <v-container>
-        <v-carousel>
-          <v-carousel-item v-for="(article, index) in articles" :key="index">
-            <v-card>
-              <v-img
-                src="https://blog.skillfactory.ru/wp-content/uploads/2023/02/logo-vuejs-9686556.png">
-                height: "100px" 
-                width: "100px"
-              </v-img> 
-              <v-card-title>{{ article.title }}</v-card-title>
-              <v-card-subtitle>{{ article.author }}</v-card-subtitle>
-              <v-card-actions>
-                <v-btn @click="article.published = !article.published">
-                  {{ article.published ? "Unpublished" : "" }}
-                </v-btn>
-                <v-btn @click="showDialog(index)">Редактировать</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-carousel-item>
-        </v-carousel>
-      </v-container>   -->
-      <!-- <v-card>
-        <v-card-title>Заголовок</v-card-title>
-    
-        <v-card-text>
-          Текст карточки
-        </v-card-text>
-    
-        <v-card-actions>
-          <v-btn color="primary">Действие 1</v-btn>
-          <v-btn color="secondary">Действие 2</v-btn>
-        </v-card-actions>
-      </v-card> -->
       <router-view/>
-  
     </v-main>
 
     <v-footer color="primary" dark>
@@ -123,7 +88,7 @@ export default {
     return {
       drawer: false,
       items: [
-        { title: 'Articles', icon: 'mdi-newspaper', route: { name: 'Home' } },
+        { title: 'Articles', icon: 'mdi-newspaper'},
         { title: 'About', icon: 'mdi-information', route: { name: 'About' } }
       ],
     };
